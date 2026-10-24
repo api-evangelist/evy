@@ -1,25 +1,80 @@
 aid: evy
+
 name: Evy
-description: 'Evy is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by sequoia-capital) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Evy provides product protection solutions. Unlock new revenue streams and captivate your customers with Evy by your side.'
+
 url: https://raw.githubusercontent.com/api-evangelist/evy/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-23 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-23'
+
 modified: '2026-10-23'
+
 tags:
-- Company
-apis: []
+- Product Protection
+- FinTech
+- SaaS
+- Security
+- Insurance
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- sequoia-capital
+
 common:
+- type: Security
+  url: security/evy-vulnerability-disclosure.yml
+- type: WellKnown
+  url: well-known/evy-well-known.yml
+- type: Hosts
+  url: hosts/evy-hosts.yml
+- type: Vendors
+  url: vendors/evy-vendors.yml
+- type: TermsOfService
+  url: https://www.evy.eu/en/legal-notice
+- type: StatusPage
+  url: https://status.evy.eu/
+- type: PrivacyPolicy
+  url: https://www.evy.eu/en/privacy-policy
+- type: VulnerabilityDisclosure
+  url: security/evy-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/evy-domain-security.yml
 - type: Website
   url: https://evy.eu
+
+apis: []
+
+x-backed-by:
+- sequoia-capital
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  method: derived
+  generated: '2026-10-23'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company serves an API surface but requires credentials before any description of it can be read
+  evidence:
+  - url: https://api.evy.eu/mcp
+    status: 401
+  - url: https://evy.eu
+    status: 200
+x-enrichment:
+  date: '2026-10-23'
+  status: enriched
+  artifacts_added: 9
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
